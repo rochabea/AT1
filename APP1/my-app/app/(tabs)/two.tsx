@@ -1,73 +1,76 @@
-import React, { useState } from 'react';
-import { View, TextInput, Pressable, Text, StyleSheet, Alert } from 'react-native';
+import React, { useState } from "react";
+import { View, TextInput, Pressable, Text, StyleSheet, Alert } from "react-native";
 
-export default function LoginScreen() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+export default function TwoScreen(): React.ReactElement {
+  const [visible, setVisible] = useState<boolean>(false);
+  const [mensagem, setMensagem] = useState<string>("");
 
-  const handleLogin = () => {
-    if (username && password) {
-      Alert.alert("Login realizado!", `Usuário: ${username}`);
-    } else {
-      Alert.alert("Erro", "Preencha usuário e senha");
+  const abrir = (): void => setVisible(true);
+  const cancelar = (): void => {
+    setMensagem("");
+    setVisible(false);
+  };
+  const enviar = (): void => {
+    Alert.alert("Alerta!", mensagem ? `Mensagem enviada: ${mensagem}` : "Digite uma mensagem hj :)");
+    if (mensagem) {
+      setMensagem("");
+      setVisible(false);
     }
   };
 
   return (
     <View style={styles.container}>
-      <TextInput
-        placeholder="Usuário"
-        placeholderTextColor="#888"
-        value={username}
-        onChangeText={setUsername}
-        style={styles.input}
-      />
-      <TextInput
-        placeholder="Senha"
-        placeholderTextColor="#888"
-        value={password}
-        onChangeText={setPassword}
-        secureTextEntry={true}
-        style={styles.input}
-      />
+      {!visible ? (
+        <Pressable style={styles.openBtn} onPress={abrir}>
+          <Text style={styles.openBtnText}>Escrever mensagem</Text>
+        </Pressable>
+      ) : (
+        <View style={styles.card}>
+          <Text style={styles.title}>Deixe uma mensagem feliz:</Text>
 
-      <Pressable style={styles.button} onPress={handleLogin}>
-        <Text style={styles.buttonText}>Entrar</Text>
-      </Pressable>
+          <TextInput
+            placeholder="Digite sua mensagem"
+            value={mensagem}
+            onChangeText={setMensagem}
+            style={styles.input}
+            multiline
+          />
+
+          <View style={styles.row}>
+            <Pressable style={[styles.btn, styles.cancel]} onPress={cancelar}>
+              <Text style={styles.btnText}>Cancelar</Text>
+            </Pressable>
+            <Pressable style={[styles.btn, styles.save]} onPress={enviar}>
+              <Text style={styles.btnText}>Enviar</Text>
+            </Pressable>
+          </View>
+        </View>
+      )}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { 
-    flex: 1, 
-    justifyContent: 'center', 
-    alignItems: 'center',
-    padding: 20,
-    backgroundColor: '#f5f5f5', // fundo claro
+  container: { flex: 1, alignItems: "center", justifyContent: "center", padding: 24, backgroundColor: "#f5f5f5" },
+
+  openBtn: { backgroundColor: "#007AFF", paddingVertical: 12, paddingHorizontal: 24, borderRadius: 10 },
+  openBtnText: { color: "#fff", fontWeight: "600" },
+
+  card: {
+    width: "100%", maxWidth: 360, backgroundColor: "#fff", borderRadius: 14, padding: 16,
+    elevation: 4, shadowColor: "#000", shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.15, shadowRadius: 8,
   },
+  title: { fontSize: 18, fontWeight: "700", marginBottom: 12 },
+
   input: {
-    height: 50,
-    borderColor: '#ccc',
-    borderWidth: 1,
-    borderRadius: 8,
-    paddingHorizontal: 15,
-    width: '100%',
-    marginBottom: 15,
-    backgroundColor: 'white',
-    fontSize: 16,
+    borderWidth: 1, borderColor: "#ddd", borderRadius: 8, paddingHorizontal: 12, paddingVertical: 10,
+    minHeight: 44, backgroundColor: "#fff", marginBottom: 16, textAlignVertical: "top",
   },
-  button: {
-    backgroundColor: '#007AFF',
-    paddingVertical: 12,
-    paddingHorizontal: 25,
-    borderRadius: 8,
-    width: '100%',
-    alignItems: 'center',
-  },
-  buttonText: { 
-    color: 'white', 
-    fontWeight: 'bold',
-    fontSize: 16,
-  },
+
+  row: { flexDirection: "row", gap: 10, justifyContent: "flex-end" },
+
+  btn: { paddingVertical: 10, paddingHorizontal: 16, borderRadius: 8 },
+  cancel: { backgroundColor: "#999" },
+  save: { backgroundColor: "#007AFF" },
+  btnText: { color: "#fff", fontWeight: "600" },
 });
