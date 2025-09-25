@@ -6,7 +6,7 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: "#2767B1",
+        tabBarActiveTintColor: "#000000ff",
         tabBarInactiveTintColor: "#999",
         tabBarStyle: { backgroundColor: "#fff", paddingBottom: 5, height: 60 },
       }}
@@ -21,7 +21,7 @@ export default function TabLayout() {
               style={{
                 width: 24,
                 height: 24,
-                tintColor: focused ? "#2767B1" : "#999", 
+                tintColor: focused ? "#000000ff" : "#999", 
               }}
               resizeMode="contain"
             />
@@ -38,7 +38,7 @@ export default function TabLayout() {
               style={{
                 width: 24,
                 height: 24,
-                tintColor: focused ? "#2767B1" : "#999",
+                tintColor: focused ? "#000000ff" : "#999",
               }}
               resizeMode="contain"
             />
@@ -55,7 +55,7 @@ export default function TabLayout() {
               style={{
                 width: 24,
                 height: 24,
-                tintColor: focused ? "#2767B1" : "#999",
+                tintColor: focused ? "#000000ff" : "#999",
               }}
               resizeMode="contain"
             />
@@ -72,7 +72,7 @@ export default function TabLayout() {
               style={{
                 width: 24,
                 height: 24,
-                tintColor: focused ? "#2767B1" : "#999",
+                tintColor: focused ? "#000000ff" : "#999",
               }}
               resizeMode="contain"
             />
