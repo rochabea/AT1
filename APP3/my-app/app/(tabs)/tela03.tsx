@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from "react-native";
 
-export default function PerfilScreen() {
+export default function Tela03Screen() {
   return (
     <ScrollView style={styles.container}>
       {/* Header com nome */}
@@ -13,14 +13,14 @@ export default function PerfilScreen() {
       </View>
 
       {/* Lista de opções */}
-      <TouchableOpacity style={styles.item}><Text>📦 Entrega mais segura</Text></TouchableOpacity>
-      <TouchableOpacity style={styles.item}><Text>💬 Conversas</Text></TouchableOpacity>
-      <TouchableOpacity style={styles.item}><Text>🔔 Notificações</Text></TouchableOpacity>
-      <TouchableOpacity style={styles.item}><Text>👤 Dados da conta</Text></TouchableOpacity>
-      <TouchableOpacity style={styles.item}><Text>💳 Pagamentos</Text></TouchableOpacity>
-      <TouchableOpacity style={styles.item}><Text>🏷️ Cupons</Text></TouchableOpacity>
-      <TouchableOpacity style={styles.item}><Text>👥 Comunidade iFood</Text></TouchableOpacity>
-      <TouchableOpacity style={styles.item}><Text>📌 Código de entrega</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.item}><Text>Entrega mais segura</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.item}><Text>Conversas</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.item}><Text>Notificações</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.item}><Text>Dados da conta</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.item}><Text>Pagamentos</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.item}><Text>Cupons</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.item}><Text>Comunidade iFood</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.item}><Text>Código de entrega</Text></TouchableOpacity>
     </ScrollView>
   );
 }

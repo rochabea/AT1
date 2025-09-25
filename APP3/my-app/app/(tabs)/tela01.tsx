@@ -41,7 +41,7 @@ const produtos: Produto[] = [
 const screenWidth = Dimensions.get("window").width;
 const produtoWidth = (screenWidth - 40) / 3;
 
-export default function LojaScreen() {
+export default function Tela01Screen() {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.headerBackground}>
@@ -88,6 +88,7 @@ export default function LojaScreen() {
             <Text style={styles.nivelNegrito}>Nível 4</Text>
             <Text style={styles.avaliacaoCinza}> de 5</Text>
           </View>
+          <Image source={IconSetaC} style={styles.setaIcon} />
         </TouchableOpacity>
         <View style={styles.divider} />
 
@@ -120,8 +121,8 @@ export default function LojaScreen() {
         <View style={styles.cupomContent}>
           <Image source={IconCupom} style={styles.cupomIcon} />
           <Text>
-            <Text style={styles.cupomValor}>R$ 50 </Text>
-            <Text style={styles.cupomTexto}>cupons aqui</Text>
+            <Text style={styles.cupomValor}>R$ 50 em cupons</Text>
+            <Text style={styles.cupomTexto}> aqui</Text>
           </Text>
         </View>
         <Image source={IconSetaC} style={styles.setaIcon} />
