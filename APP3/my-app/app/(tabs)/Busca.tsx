@@ -37,6 +37,9 @@ const produtos: Produto[] = [
   { id: "4", nome: "Metade Milho", preco: "R$ 58,00", img: BoloMandioca },
   { id: "5", nome: "Bolo Milho", preco: "R$ 40,00", img: BoloChocolateMorango },
   { id: "6", nome: "Bolo Mandioca Romeu e Julieta", preco: "R$ 28,00", img: BoloCoco },
+  { id: "7", nome: "Metade Cenoura com Cobertura", preco: "R$ 30,00", img: BoloCenoura },
+  { id: "8", nome: "Bolo Cenoura com cobertura", preco: "R$ 34,00", img: BoloFormigueiro },
+  { id: "9", nome: "Bolo de Formigueiro", preco: "R$ 23,00", img: BoloMilho },
 ];
 
 const screenWidth = Dimensions.get("window").width;
@@ -267,7 +270,7 @@ const styles = StyleSheet.create({
   },
 
   cupomBox: {
-    marginTop: 15,
+    marginTop: -10,
     marginHorizontal: 15,
     flexDirection: "row",
     alignItems: "center",
