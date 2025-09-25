@@ -1,4 +1,5 @@
 import React from "react";
+
 import { View, Text, Image, StyleSheet, ScrollView, Dimensions, TouchableOpacity } from "react-native";
 
 // Imagens de bolos

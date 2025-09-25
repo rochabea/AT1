@@ -1,57 +1,82 @@
-import React from 'react';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Link, Tabs } from 'expo-router';
-import { Pressable } from 'react-native';
-
-import Colors from '@/constants/Colors';
-import { useColorScheme } from '@/components/useColorScheme';
-import { useClientOnlyValue } from '@/components/useClientOnlyValue';
-
-// You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
-  color: string;
-}) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
-}
+import { Tabs } from "expo-router";
+import { Image } from "react-native";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        // Disable the static render of the header on web
-        // to prevent a hydration error in React Navigation v6.
-        headerShown: useClientOnlyValue(false, true),
-      }}>
+        headerShown: false,
+        tabBarActiveTintColor: "#2767B1",
+        tabBarInactiveTintColor: "#999",
+        tabBarStyle: { backgroundColor: "#fff", paddingBottom: 5, height: 60 },
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
-            <Link href="/modal" asChild>
-              <Pressable>
-                {({ pressed }) => (
-                  <FontAwesome
-                    name="info-circle"
-                    size={25}
-                    color={Colors[colorScheme ?? 'light'].text}
-                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                  />
-                )}
-              </Pressable>
-            </Link>
+          title: "Início",
+          tabBarIcon: ({ focused }) => (
+            <Image
+              source={require("../../assets/images/home.png")}
+              style={{
+                width: 24,
+                height: 24,
+                tintColor: focused ? "#2767B1" : "#999", 
+              }}
+              resizeMode="contain"
+            />
           ),
         }}
       />
+
       <Tabs.Screen
-        name="two"
+        name="Busca"
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ focused }) => (
+            <Image
+              source={require("../../assets/images/lupa.png")}
+              style={{
+                width: 24,
+                height: 24,
+                tintColor: focused ? "#2767B1" : "#999",
+              }}
+              resizeMode="contain"
+            />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="Pedidos"
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <Image
+              source={require("../../assets/images/pedido.png")}
+              style={{
+                width: 24,
+                height: 24,
+                tintColor: focused ? "#2767B1" : "#999",
+              }}
+              resizeMode="contain"
+            />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="Perfil"
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <Image
+              source={require("../../assets/images/perfil.png")}
+              style={{
+                width: 24,
+                height: 24,
+                tintColor: focused ? "#2767B1" : "#999",
+              }}
+              resizeMode="contain"
+            />
+          ),
         }}
       />
     </Tabs>

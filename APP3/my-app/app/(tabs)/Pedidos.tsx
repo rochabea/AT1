@@ -2,11 +2,17 @@ import React from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 
 const Cartao = require("../../assets/images/cartao.png");
+const IconClose = require("../../assets/images/x.png"); 
+
 
 export default function PromoScreen() {
   return (
     <View style={styles.container}>
-      {/* Conteúdo*/}
+      <TouchableOpacity style={styles.iconX}>
+        <Image source={IconClose} style={styles.iconXImg} />
+      </TouchableOpacity>
+
+      {/* Conteúdo */}
       <View style={styles.content}>
         <Image source={Cartao} style={styles.img} />
 
@@ -41,6 +47,19 @@ const styles = StyleSheet.create({
   container: { 
     flex: 1, 
     backgroundColor: "#fff" 
+  },
+  iconX: {
+    position: "absolute",
+    top: 30, 
+    right: 20,
+    zIndex: 10,
+    width: 20,
+    height: 20,
+  },
+  iconXImg: {
+    width: "100%",
+    height: "100%",
+    resizeMode: "contain",
   },
   content: {
     flex: 1,
