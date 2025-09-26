@@ -3,14 +3,27 @@ import { Image } from "react-native";
 
 export default function TabLayout() {
   return (
-    <Tabs
-      screenOptions={{
-        headerShown: false,
-        tabBarActiveTintColor: "#000000ff",
-        tabBarInactiveTintColor: "#999",
-        tabBarStyle: { backgroundColor: "#fff", paddingBottom: 5, height: 60 },
-      }}
-    >
+
+  <Tabs
+    screenOptions={{
+      headerShown: false,
+      tabBarActiveTintColor: "#000000ff",
+      tabBarInactiveTintColor: "#999",
+      tabBarStyle: { 
+        backgroundColor: "#fff", 
+        paddingBottom: 5, 
+        height: 60,
+        borderTopWidth: 1,        
+        borderTopColor: "#eee",   
+        shadowColor: "#000",     
+        shadowOpacity: 0.05,
+        shadowRadius: 2,
+        shadowOffset: { width: 0, height: -1 },
+        elevation: 2,
+      },
+    }}
+  >
+
       <Tabs.Screen
         name="index"
         options={{
