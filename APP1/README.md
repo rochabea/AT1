@@ -1,6 +1,3 @@
-# AT1
-Repositório para desenvolver as atividades da AT1 da matéria "Programação de App"
-
 # APP1
 **Componentes utilizados**
 - View 
@@ -55,10 +52,3 @@ Repositório para desenvolver as atividades da AT1 da matéria "Programação de
   - Ok para spinners simples. Para skeletons/shimmers, use libs específicas.
 - **Alert**:
   - Nativo, simples. Para diálogos customizados, construa modal próprio.
-
-
-# Como rodar (bash)
-
-```bash
-npm install
-npx expo start
