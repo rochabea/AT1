@@ -1,4 +1,4 @@
-# Atividade 1
+# Questão 1
 
 - Expo Router
 é um sistema de roteamento baseado em arquivos criado pelo Expo, por meio dele é possível criar pastas e arquivos dentro da pasta "app/" e o Expo Router gera as rotas corretamente
@@ -31,3 +31,7 @@ funciona sendo um navegação em pilha. Com a navegação entre as telas, quando
 | **Stack Navigator**   | Login → Cadastro → Home       | Centro          | Fluxo em pilha               |
 | **Bottom Tab**        | Home, Busca, Perfil           | Inferior        | Abas fixas                   |
 | **Drawer Navigation** | Menu lateral                  | Lateral         | Abre via swipe ou botão      |
+
+# Questão 2
+
+# Questão 3
