@@ -192,7 +192,7 @@ Decisões de Usabilidade para o App Farmácia ABE
 
 # Questão 8
 
-## 1 - AsyncStorage
+## **AsyncStorage**
 **Descrição:**  
 API de armazenamento chave-valor assíncrona, usada para dados simples no React Native/Web.
 
@@ -213,7 +213,7 @@ API de armazenamento chave-valor assíncrona, usada para dados simples no React 
 
 ---
 
-## 2 - expo-sqlite
+## **expo-sqlite**
 **Descrição:**  
 Banco SQLite embutido, acessível via API do Expo, suporta SQL.
 
@@ -233,7 +233,7 @@ Banco SQLite embutido, acessível via API do Expo, suporta SQL.
 
 ---
 
-## 3 - SQLite (nativo ou via `react-native-sqlite-storage`)
+## **SQLite (nativo ou via `react-native-sqlite-storage`)**
 **Descrição:**  
 Banco de dados relacional completo, usado diretamente no dispositivo.
 
@@ -255,7 +255,7 @@ Banco de dados relacional completo, usado diretamente no dispositivo.
 
 ---
 
-## 4 - react-native-keychain
+## **react-native-keychain**
 **Descrição:**  
 Armazenamento seguro de dados sensíveis, usando **Keychain (iOS)** ou **Keystore (Android)**.
 
@@ -275,26 +275,26 @@ Armazenamento seguro de dados sensíveis, usando **Keychain (iOS)** ou **Keystor
 
 # Questão 9
 
-**Notifee**
+## **Notifee**
 
 Notifee é uma biblioteca avançada de notificações para aplicativos React Native. Ela permite criar notificações locais, agendadas e push (remotas) com recursos avançados, como canais de notificação no Android, personalização de ícones e ações interativas. É importante destacar que **Notifee não funciona no Expo Go**, para utilizá-la, é necessário gerar builds nativos usando EAS Build no Android ou iOS.
 
-**Notificações local vs notificações remotas**
+## **Notificações local vs notificações remotas**
 
 As notificações podem ser locais ou remotas, ou seja, locais são geradas e exibidas diretamente pelo aplicativo no dispositivo, como lembretes ou alertas internos. Já as notificações remotas, também chamadas de push, são enviadas de um servidor externo, como o Firebase Cloud Messaging (FCM), permitindo que o usuário receba mensagens mesmo quando o app está fechado ou em segundo plano.
 
-**Notificações rodando em background**
+## **Notificações rodando em background**
 
 É possível configurar notificações para serem recebidas enquanto o aplicativo está em background. No Android, isso é feito utilizando canais de notificação e serviços do sistema. No iOS, é necessário habilitar Background Modes e permitir Remote Notifications no Xcode, garantindo que as mensagens push cheguem ao dispositivo mesmo sem o app aberto.
 
-**Firebase Cloud Messaging (FCM)**
+## **Firebase Cloud Messaging (FCM)**
 
 É um serviço do Firebase que permite enviar notificações push para dispositivos Android e iOS. Ele é utilizado para enviar mensagens mesmo quando o aplicativo está fechado ou em segundo plano, mantendo o usuário informado sobre eventos importantes. O FCM funciona em conjunto com Notifee ou outras bibliotecas de notificação, garantindo entrega confiável das mensagens.
 
-**Permissões necessárias para cada plataforma**
+## **Permissões necessárias para cada plataforma**
 
 As notificações exigem permissões específicas em cada sistema operacional. No Android, é necessário configurar permissões no arquivo AndroidManifest.xml, como RECEIVE e INTERNET. No iOS, as permissões devem ser solicitadas em tempo de execução via UNUserNotificationCenter, além de habilitar as permissões correspondentes no Xcode para notificações remotas.
 
-**React Native Push Notification**
+## **React Native Push Notification**
 
 É outra biblioteca que permite criar notificações locais e push em React Native. Assim como Notifee, **não funciona no Expo Go**, sendo necessário um build nativo ou utilizar o Bare Workflow. Ela oferece funcionalidades similares, mas é mais antiga e menos flexível em comparação ao Notifee.
