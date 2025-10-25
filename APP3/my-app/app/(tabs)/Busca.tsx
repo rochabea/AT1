@@ -294,4 +294,5 @@ const styles = StyleSheet.create({
   cupomIcon: { width: 20, height: 20 },
   cupomValor: { color: "#6b2d88ff", fontWeight: "bold" },
   cupomTexto: { color: "#000", fontWeight: "bold" },
+  
 });

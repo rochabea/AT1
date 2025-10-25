@@ -29,7 +29,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Tab One',
+          title: 'Notifee',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
             <Link href="/modal" asChild>
@@ -48,9 +48,9 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="PushNotification"
         options={{
-          title: 'Tab Two',
+          title: 'Push Notification',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
