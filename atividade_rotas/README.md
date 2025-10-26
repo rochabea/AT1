@@ -150,6 +150,9 @@ O layout do nosso aplicativo foi construído utilizando o flexbox, facilitando a
 | **flex-end**       | Alinha ao fim                          | Botões no rodapé                            |
 | **center**         | Centraliza no eixo principal           | Ícones e imagens centrais                   |
 
+# Questão 4
+
+
 # Questão 5
 Decisões de Usabilidade para o App Farmácia ABE
 
@@ -189,6 +192,21 @@ Decisões de Usabilidade para o App Farmácia ABE
 
 	- Decisão: Integração com sistemas de pagamento confiáveis e rápidos, evitando etapas desnecessárias.
 	- Impacto na usabilidade: Aumenta a eficiência, reduz erros e evita frustrações no momento crítico da compra.
+
+# Questão 6
+UI Thread é a thread principal da splicação, reponsável por controlar tudo que o usuário vê e interage na interface gráfica (UI). Por meio dela é executado as tarefas de renderização dos componentes visuais, atualização de layout, animações, toques na tela, scrolls e outras interações de interface.
+Funcionamento: com React Native, o aplicativo funciona em múltiplas threads que trabalham em conjunto:
+	- Thread: Onde o código é executado, com seus componentes, hooks, lógica de estado e entre outros, é nesse ambiente em que o React calcula o que deve mudar na interface;
+	- UI Thread (main): Responsável por applicar as mudanças visuais e desenhar a interface com base nas intruções enviadas pela Thread, responsável por toda a parte visual gráfica que o usuário vê;
+	- Bridge: um canal de comunicação entre o código Raect e o código nativo. É feito o envio das atualizações da UI e eventos de interação entre as threads.
+Sequência ordem de carregamento
+	1. Inicialização: quando a aplicativo é inicializado, a UI Thread é a primeira a iniciar que fica responsável por exibir a tela de carregamento (splash screen)
+	2. Execução: a Thread é carregada em seguida, fazendo o processamento do código React, montando os componentes e calculando o que precisa ser exibido;
+	3. Renderização: as instruções visuais são enviadas pela Bridge para a UI Thread, onde é feito o renderizamento na tela;
+	4. Interação do usuário: quando o usuário faz alguma ação coma interface, os eventos são processados primeiro pela UI Thread e, em caso de necessidade, repassados novamente para a Thread;
+	5. Atualização contínua: esse ciclo ocorre constantemente, garantindo que qualquer mudança no estado da aplicação seja refletida visualmente
+
+# Questão 7
 
 # Questão 8
 
